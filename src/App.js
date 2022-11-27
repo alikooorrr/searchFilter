@@ -10,7 +10,6 @@ function App() {
   useEffect(()=>{
     const fetchUsers = async() => {
       const res = await axios.get(`http://localhost:5000?q=${user}`)
-      console.log(res)
       setData(res.data)
     }
     fetchUsers()
