@@ -1,4 +1,4 @@
-let Users = [
+const Users = [
   {
     "id": 1,
     "first_name": "Emiline",
@@ -7001,4 +7001,4 @@ let Users = [
   }
 ]
 
-export default Users
+module.exports = Users
