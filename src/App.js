@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import InputSearch from './InputSearch';
+import Table from './Table';
+import Users from './Users'
 
 function App() {
+  let [user, setUser] = useState('')
+  let searchFunc = (data) => {
+    return data.filter(item => item.first_name.toLowerCase().includes(user.toLowerCase()))
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <InputSearch user={user} setUser={setUser}/>
+      <Table users={searchFunc(Users)}/>
+    </>
   );
 }
 
